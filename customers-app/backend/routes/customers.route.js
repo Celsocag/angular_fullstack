@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try{
-    const customer = new Customer(req.body);
+        const customer = new Customer(req.body);
         const savedCustomer = customer.save();
         res.status(200).json(savedCustomer)
     }
@@ -37,3 +37,43 @@ router.post('/', async (req, res) => {
         res.status(500).json({message: "An error occurred", error: err})
     }
 });
+
+//PUT: update
+
+router.put('/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        const customer = req.body;
+        const updatedCustomer = customer.findOneAndUpdate({
+            _id: id
+        },
+        {
+            $set: customer
+        },
+        {
+            new: true
+        }
+    );
+        res.status(200).json(updatedCustomer)
+    }
+    catch (err) {
+        res.status(500).json({message: "An error occurred", error: err})
+    }
+});
+
+//DELETE: delete
+
+router.delete ('/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        let deletedCustomer = awaitCustomer.deleteOne({
+            _id: id
+        });
+        res.status(200).json(deletedCustomer)
+    }
+    catch (err) {
+        res.status(500).json({message: "An error occurred", error: err})
+    }
+});
+
+module.exports = router
