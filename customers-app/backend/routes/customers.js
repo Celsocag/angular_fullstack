@@ -59,17 +59,19 @@ router.put('/:id', async (req, res) => {
 
 //DELETE: delete
 
-router.delete ('/:id', async (req, res) => {
-    try{
-        const id = req.params.id;
-        let deletedCustomer = awaitCustomer.deleteOne({
-            _id: id
-        });
-        res.status(200).json(deletedCustomer)
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const deletedCustomer = await Customer.deleteOne({ _id: id });
+
+    if (deletedCustomer.deletedCount === 0) {
+      return res.status(404).json({ message: 'Customer not found' });
     }
-    catch (err) {
-        res.status(500).json({message: "An error occurred", error: err})
-    }
+
+    res.status(200).json({ message: 'Customer deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'An error occurred', error: err });
+  }
 });
 
 module.exports = router
