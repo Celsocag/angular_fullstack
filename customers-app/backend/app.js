@@ -1,8 +1,10 @@
-const express = require('express');
+require('dotenv').config();
 
+const express = require('express');
 const app = express();
 const cors = require('cors');
-
+const mongoose = require('mongoose');
+const mongoUri = process.env.MONGO_URI;
 const PORT = 3000;
 
 //enable cors
@@ -23,3 +25,14 @@ app.listen(PORT, (err) => {
     !err ? console.log("Server is successfulll") : 
     console.log("An error occurred: ", err)
 });
+main().catch((err) => {
+    console.error(err)
+})
+
+async function main() {
+    //prepare connection string
+    const connectionString = mongoUri
+    await mongoose.connect(connectionString);
+    mongoose.set('strictQuery', true);
+
+}

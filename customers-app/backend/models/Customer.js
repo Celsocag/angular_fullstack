@@ -7,15 +7,15 @@ const CustomerSchema = mongoose.Schema(
             required: true
         },
         name: {
-            type: string,
+            type: String,
             required: true
         },
         email: {
-            type: string,
+            type: String,
             required: true
         },
         phone: {
-            type: string,
+            type: String,
             required: true
         },
     }
@@ -23,4 +23,4 @@ const CustomerSchema = mongoose.Schema(
 
 const Customer = mongoose.model('customers', CustomerSchema)
 
-model.exports = Customer
+module.exports = Customer

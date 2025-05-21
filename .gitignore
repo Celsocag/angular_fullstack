@@ -1,0 +1,12 @@
+# Ignora arquivos .env em qualquer subpasta
+**/.env
+
+# Ignora node_modules em qualquer pasta
+**/node_modules
+
+# Logs
+*.log
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
