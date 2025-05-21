@@ -10,7 +10,7 @@ const PORT = 3000;
 //enable cors
 app.use(cors());
 //enable json parser
-app.use(express.json);
+app.use(express.json());
 
 // route the customer api
 const customerRoutes = require('./routes/customers')
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, (err) => {
-    !err ? console.log("Server is successfulll") : 
+    !err ? console.log("Server is successfullly running at port: " + PORT) : 
     console.log("An error occurred: ", err)
 });
 main().catch((err) => {

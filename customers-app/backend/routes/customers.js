@@ -41,24 +41,20 @@ router.post('/', async (req, res) => {
 //PUT: update
 
 router.put('/:id', async (req, res) => {
-    try{
-        const id = req.params.id;
-        const customer = req.body;
-        const updatedCustomer = customer.findOneAndUpdate({
-            _id: id
-        },
-        {
-            $set: customer
-        },
-        {
-            new: true
-        }
+  try {
+    const id = req.params.id;
+    const updateData = req.body;
+
+    const updatedCustomer = await Customer.findOneAndUpdate(
+      { _id: id },
+      { $set: updateData },
+      { new: true }
     );
-        res.status(200).json(updatedCustomer)
-    }
-    catch (err) {
-        res.status(500).json({message: "An error occurred", error: err})
-    }
+
+    res.status(200).json(updatedCustomer);
+  } catch (err) {
+    res.status(500).json({ message: "An error occurred", error: err });
+  }
 });
 
 //DELETE: delete
