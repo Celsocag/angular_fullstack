@@ -1,6 +1,6 @@
 # Angular Fullstack
 
-Projeto Full‑Stack com Angular (frontend) + Spring Boot/Node.js (backend), baseado em uma série de vídeos do YouTube para construir uma aplicação CRUD completa.
+Projeto Full‑Stack com Angular (frontend) + Spring Boot/Node.js (backend), para construir uma aplicação CRUD completa.
 
 
 ---
