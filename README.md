@@ -1,50 +1,26 @@
 # Angular Fullstack
 
-:contentReference[oaicite:3]{index=3}
+Projeto Full‑Stack com Angular (frontend) + Spring Boot/Node.js (backend), baseado em uma série de vídeos do YouTube para construir uma aplicação CRUD completa.
+
 
 ---
 
 ## 🎯 Objetivos
 
-- :contentReference[oaicite:4]{index=4}
-- :contentReference[oaicite:5]{index=5}
-- :contentReference[oaicite:6]{index=6}
-- :contentReference[oaicite:7]{index=7}
+- Construir uma aplicação CRUD completa (Create, Read, Update, Delete).
+- Arquitetura separada: frontend em Angular e backend em API REST (Spring Boot ou Node.js).
+- Aprender integração de componentes, serviços, rotas e chamadas HTTP no Angular.
+- Entender como criar APIs com rotas claras, modelos de dados, controllers e serviços no backend.
 
----
-
-## 📚 Estrutura
-
-angular_fullstack/
-├── backend/ # API REST (Spring Boot ou Node.js + Express)
-│ ├── src/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ └── Application.java / server.js
-│
-├── frontend/ # Aplicação Angular
-│ ├── src/
-│ ├── app/
-│ │ ├── components/
-│ │ └── services/
-│ └── angular.json
-│
-├── README.md
-└── package.json (mesmo monorepo)
-
-yaml
-Copiar
-Editar
 
 ---
 
 ## 🚀 Tecnologias
 
-- :contentReference[oaicite:8]{index=8}
-- :contentReference[oaicite:9]{index=9}
-- :contentReference[oaicite:10]{index=10}
-- :contentReference[oaicite:11]{index=11}
+- **Frontend:** Angular, TypeScript, RxJS, Angular CLI, Bootstrap/Material.
+- **Backend:** Spring Boot (Java) ou Node.js + Express.
+- **Banco de Dados:** MySQL, MongoDB ou outro.
+- **Ferramentas:** Postman, Git, Maven/Gradle, Nodemon.
 
 ---
 
